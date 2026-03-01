@@ -1,0 +1,16 @@
+# Build artifacts
+mod/build/
+mod/release/
+engine/build/
+engine/release/
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
