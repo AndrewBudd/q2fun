@@ -28,12 +28,13 @@ A sixth rune inspired by the Aliens vs Predator Quake II mod:
 | Ability | Description | Config var (default) |
 |---------|-------------|---------------------|
 | Cloaking | Player becomes translucent; breaks on firing, re-engages after delay | `rune_predator_recloak` (3.0s) |
-| Speed boost | Faster movement | `rune_predator_speed` (1.3x) |
+| Speed boost | Faster movement | `rune_predator_speed` (1.5x) |
 | Jump boost | Reduced gravity | `rune_predator_gravity` (0.65x) |
+| No fall damage | Immune to falling damage | - |
 | Close-range damage | Bonus damage at short range | `rune_predator_closedmg` (2.0x) / `rune_predator_closerange` (100 units) |
 | Self-destruct | Explosion on death damages nearby players | `rune_predator_selfdestruct_dmg` (200) / `_radius` (250) |
 
-The Predator rune spawns with a dark grey shell and is included in the default rune rotation.
+The Predator rune spawns with a dark grey shell. Only one can exist at a time (on the map or held by a player), making it a rare and powerful pickup.
 
 ## Building
 
