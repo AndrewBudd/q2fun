@@ -93,7 +93,7 @@ void Rune_InitGame(void) {
 	rune_regen_sound = lvar("rune_regen_sound", "items/s_health.wav", "wav", VAR_NONE);
 	rune_vampire_sound = lvar("rune_vampire_sound", "makron/pain2.wav", "wav", VAR_NONE);
 
-	rune_predator_speed = lvar("rune_predator_speed", "1.3", "#.##", VAR_RUNE);
+	rune_predator_speed = lvar("rune_predator_speed", "1.5", "#.##", VAR_RUNE);
 	rune_predator_gravity = lvar("rune_predator_gravity", "0.65", "#.##", VAR_RUNE);
 	rune_predator_closedmg = lvar("rune_predator_closedmg", "2.0", "#.##", VAR_RUNE);
 	rune_predator_closerange = lvar("rune_predator_closerange", "100", "###", VAR_RUNE);
@@ -155,13 +155,18 @@ void Rune_RunFrame(void) {
 
 		// find which rune there are fewest of
 		lowest = -1;
-		for(i = 0; i < NUM_RUNES; i++)
+		for(i = 0; i < NUM_RUNES; i++) {
+			// skip predator from lowest calc since it's capped at 1
+			if((1 << i) & RUNE_PREDATOR)
+				continue;
 			if((int)rune_flags->value & 1 << i && (lowest == -1 || rune_count[i] < lowest))
 				lowest = rune_count[i];
+		}
 
 		i = j = rand() % NUM_RUNES;
 		do {
-			if((lowest == -1 || rune_count[i] == lowest) && (int)rune_flags->value & 1 << i) {
+			if((lowest == -1 || rune_count[i] == lowest) && (int)rune_flags->value & 1 << i
+				&& !((1 << i) & RUNE_PREDATOR && rune_count[i] >= 1)) {
 				rune_count[i]++;
 				rune_total++;
 				Rune_Spawn(ent->s.origin, 1 << i);
