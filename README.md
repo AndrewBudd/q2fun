@@ -44,7 +44,7 @@ Requires GCC and GNU Make on Linux.
 cd mod
 make              # release build
 make DEBUG=1      # debug build
-make install      # install to ~/.yq2/lithium/
+make install      # install to ~/.yq2/q2fun/
 ```
 
 This produces `release/game.so` which is loaded by the Yamagi Quake II engine.
@@ -55,10 +55,10 @@ You need the Yamagi Quake II engine binary (`q2ded` for dedicated server or `qua
 
 ```bash
 # Dedicated server
-q2ded +set game lithium +set dedicated 1 +set deathmatch 1 +map q2dm1
+q2ded +set game q2fun +set dedicated 1 +set deathmatch 1 +map q2dm1
 
 # Local play
-quake2 +set game lithium
+quake2 +set game q2fun
 ```
 
 ## Project Structure

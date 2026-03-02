@@ -92,7 +92,7 @@ void Lithium_InitGame(void) {
 		snprintf(lithium_version, sizeof(lithium_version), "%1.2f", lithium_ver);
 	else
 		snprintf(lithium_version, sizeof(lithium_version), "%1.2f-beta%d", lithium_ver, lithium_beta);
-	snprintf(lithium_modname, sizeof(lithium_modname), "Lithium II Mod v%s", lithium_version);
+	snprintf(lithium_modname, sizeof(lithium_modname), "q2fun (Lithium II v%s)", lithium_version);
 
 	sscanf(gi.cvar("version", 0, 0)->string, "%f", &qver);
 

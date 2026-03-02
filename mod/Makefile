@@ -7,7 +7,7 @@
 # ------------------------------------------------------ #
 
 # Mod name - this becomes the directory name in the Q2 install
-MOD_NAME := lithium
+MOD_NAME := q2fun
 
 # Yamagi Quake II install directory
 # Override with: make Q2DIR=/path/to/quake2
